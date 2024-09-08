@@ -33,10 +33,6 @@ else
   # Read the QUERY result into variables
   IFS="|" read -r ATOMIC_NUMBER NAME SYMBOL TYPE MASS MELTING_POINT BOILING_POINT <<< "$QUERY"
 
-  # Format melting and boiling points to one decimal place
-  MELTING_POINT=$(printf "%.1f" "$MELTING_POINT")
-  BOILING_POINT=$(printf "%.1f" "$BOILING_POINT")
-
   # Output the element details
   echo "The element with atomic number $ATOMIC_NUMBER is $NAME ($SYMBOL). It's a $TYPE, with a mass of $MASS amu. $NAME has a melting point of $MELTING_POINT celsius and a boiling point of $BOILING_POINT celsius."
 fi
